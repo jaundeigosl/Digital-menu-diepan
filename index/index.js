@@ -40,7 +40,7 @@ function toggleMenuMobile (idMenuButton,idMenuContent){
 
         let menu = document.getElementById(idMenuContent);
 
-        if(menu.style.display == 'none' ){
+        if(menu.style.display == 'none' || menu.style.display == ''){
             menu.style.display = 'block';
         }else{
             menu.style.display = 'none';
@@ -52,13 +52,16 @@ function toggleMenuMobile (idMenuButton,idMenuContent){
 
 function toggleMenuDesktop (idMenuButton,idMenuContent,idMenuHolder,menuOptionClass){
 
+
     document.getElementById(idMenuButton).addEventListener('click',function(){
+
+        console.log('click');
 
         let menu = document.getElementById(idMenuContent);
         let menuHolder = document.getElementById(idMenuHolder);
         let menuOptions = document.getElementsByClassName(menuOptionClass);
 
-        if(menu.style.display == 'none' ){
+        if(menu.style.display == 'none' || menu.style.display ==''){
 
             menu.style.display = 'block';
             menuHolder.style.display = 'none';
@@ -71,6 +74,7 @@ function toggleMenuDesktop (idMenuButton,idMenuContent,idMenuHolder,menuOptionCl
             }
             
         }else{
+
             menu.style.display = 'none';
             menuHolder.style.display = 'block';
         }
